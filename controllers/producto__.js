@@ -51,7 +51,7 @@ export const productosPut = async (req, res) => {
 export const productosDelete = async(req, res) => {
     try {
         const { id } = req.params;
-        const productoDeleted = Producto.findByIdAndDelete(id, req.body)
+        const productoDeleted = Producto.findByIdAndDelete(id)
         res.json({
             msg: 'Producto borrado con éxito',
             infoProducto: productoDeleted// Devuelve un objeto JSON con un mensaje indicando que se está accediendo a la API con PUT
