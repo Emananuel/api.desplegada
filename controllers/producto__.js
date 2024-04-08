@@ -36,7 +36,7 @@ export const productosPut = async (req, res) => {
     try {
 
         const { id } = req.params;
-        const productoUpdated = Producto.findByIdAndUpdate(id, req.body)
+        const productoUpdated = await Producto.findByIdAndUpdate(id, req.body)
         res.json({
             msg: 'Producto actualizado con éxito',
             infoProducto: productoUpdated// Devuelve un objeto JSON con un mensaje indicando que se está accediendo a la API con PUT
@@ -51,7 +51,7 @@ export const productosPut = async (req, res) => {
 export const productosDelete = async(req, res) => {
     try {
         const { id } = req.params;
-        const productoDeleted = Producto.findByIdAndDelete(id)
+        const productoDeleted = await Producto.findByIdAndDelete(id)
         res.json({
             msg: 'Producto borrado con éxito',
             infoProducto: productoDeleted// Devuelve un objeto JSON con un mensaje indicando que se está accediendo a la API con PUT
